@@ -1,0 +1,19 @@
+name: Hello World
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # 手動実行も可能にする
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello, GitHub Actions! 🎉"
+      - name: Show date
+        run: date
+      - name: List repository contents
+        uses: actions/checkout@v4
+      - name: Display files
+        run: ls -la
